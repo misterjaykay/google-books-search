@@ -9,10 +9,12 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Route exact path="/" component={Home} />
-      <Route exact path="/search" component={Home} />
-      <Route exact path="/saved" component={Saved} />
-      <Route exact path="*" component={NonExist} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/search" component={Home} />
+          <Route exact path="/saved" component={Saved} />
+          <Route exact path="*" component={NonExist} />
+        </Switch>
     </Router>
   );
 }

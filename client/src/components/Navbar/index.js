@@ -17,7 +17,7 @@ export default function Navbar() {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/home"
+                    <Link to="/saved"
                     className={
                         window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}>
                         Saved
