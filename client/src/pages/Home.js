@@ -18,19 +18,21 @@ function Home() {
   const handleInputChange = event => {
     const { name, value } = event.target;
     // console.log(name, value)
-    setState({
+    setState({...state,
       [name]: value
     });
   };
 
   const getBooks = () => {
     API.getBooks(state.q)
-      .then(res =>
+      .then(res => {
         setState({
           ...state,
           books: res.data
-        })
-      )
+        });
+        console.log(res.data);
+        console.log(state.books.length);
+      })
       .catch(() =>
         setState({
           ...state,
@@ -47,7 +49,9 @@ function Home() {
 
   const handleBookSave = id => {
     const book = state.books.find(book => book.id === id);
-
+    console.log(book);
+    console.log(id);
+    
     API.saveBook({
       googleId: book.id,
       title: book.volumeInfo.title,
@@ -83,7 +87,7 @@ function Home() {
         <Row>
           <Col size="md-12">
             <Card title="Results" icon="fa fa-bookmark">
-              {state.books.length ? (
+              {(state.books.length > 0) ? (
                 <List>
                   {state.books.map(book => (
                     <Book
