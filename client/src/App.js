@@ -8,13 +8,15 @@ import NonExist from './pages/NonExist';
 function App() {
   return (
     <Router>
+      <div>
       <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/search" component={Home} />
           <Route exact path="/saved" component={Saved} />
-          <Route exact path="*" component={NonExist} />
+          <Route component={NonExist} />
         </Switch>
+      </div>
     </Router>
   );
 }

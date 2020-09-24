@@ -1,14 +1,24 @@
-import React from 'react';
-import Jumbotron from '../components/Jumbotron';
-import Container from '../components/Container';
+import React from "react";
+import { Col, Row, Container } from "../components/Grid";
+import Jumbotron from "../components/Jumbotron";
 
-export default function NonExist() {
-    return (
-        <>
-        <Jumbotron />
-        <Container>
-            <p>DO NOT EXIST 404</p>
-        </Container>
-        </>
-    )
+function NonExist() {
+  return (
+    <Container fluid>
+      <Row>
+        <Col size="md-12">
+          <Jumbotron>
+            <h1 className="text-center">404 Page Not Found</h1>
+            <h1 className="text-center">
+              <span role="img" aria-label="Face With Rolling Eyes Emoji">
+                🙄
+              </span>
+            </h1>
+          </Jumbotron>
+        </Col>
+      </Row>
+    </Container>
+  );
 }
+
+export default NonExist;

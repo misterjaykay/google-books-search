@@ -1,15 +1,8 @@
 import React from "react";
+import "./style.css";
 
-export default function Jumbotron() {
-  return (
-    <div className="jumbotron">
-      <div className="container">
-        <h1 className="display-4">Fluid jumbotron</h1>
-        <p className="lead">
-          This is a modified jumbotron that occupies the entire horizontal space
-          of its parent.
-        </p>
-      </div>
-    </div>
-  );
+function Jumbotron({ children }) {
+  return <div className="jumbotron mt-4">{children}</div>;
 }
+
+export default Jumbotron;
