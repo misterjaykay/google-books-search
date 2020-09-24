@@ -76,11 +76,13 @@ function Home() {
           </Col>
           <Col size="md-12">
             <Card title="Book Search" icon="fa fa-book">
+              <Col size="md-5">
               <Form
                 handleInputChange={handleInputChange}
                 handleFormSubmit={handleFormSubmit}
                 q={state.q}
               />
+              </Col>
             </Card>
           </Col>
         </Row>
