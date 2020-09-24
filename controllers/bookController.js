@@ -28,7 +28,11 @@ module.exports = {
   },
 
   remove: function(req, res) {
-    // YOUR CODE HERE
-    
+    console.log("delete req", req.params);
+    db.Book.deleteOne({
+        _id: req.params.id
+    })
+      .then(dbBook => res.json(dbBook))
+      .catch(err => res.status(404).json(err));
   }
 };

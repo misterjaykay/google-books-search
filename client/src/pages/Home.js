@@ -51,7 +51,7 @@ function Home() {
     const book = state.books.find(book => book.id === id);
     console.log(book);
     console.log(id);
-    
+
     API.saveBook({
       googleId: book.id,
       title: book.volumeInfo.title,
@@ -87,7 +87,7 @@ function Home() {
         <Row>
           <Col size="md-12">
             <Card title="Results" icon="fa fa-bookmark">
-              {(state.books.length > 0) ? (
+              {state.books.length ? (
                 <List>
                   {state.books.map(book => (
                     <Book
